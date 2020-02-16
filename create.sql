@@ -9,7 +9,7 @@ CREATE TABLE PossibleGoods
 (name VARCHAR(256) NOT NULL PRIMARY KEY,
  type VARCHAR(256) NOT NULL,
  days_to_expiration INTEGER NOT NULL,
- CHECK (quantity > 0));
+ CHECK (days_to_expiration > 0));
 
 CREATE TABLE Items
 (name VARCHAR(256) NOT NULL, 
