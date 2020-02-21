@@ -12,11 +12,12 @@ CREATE TABLE PossibleGoods
  CHECK (days_to_expiration > 0));
 
 CREATE TABLE Items
-(name VARCHAR(256) NOT NULL, 
+(id INTEGER NOT NULL,
+ name VARCHAR(256) NOT NULL, 
  purchase_date DATE NOT NULL,
  quantity INTEGER NOT NULL,
  expiration_date DATE NOT NULL,
- PRIMARY KEY (name, purchase_date),
+ PRIMARY KEY (id, name, purchase_date),
  FOREIGN KEY (name) REFERENCES PossibleGoods(name),
  CHECK (quantity > 0));
 
