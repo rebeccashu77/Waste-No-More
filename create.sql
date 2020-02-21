@@ -3,7 +3,13 @@ CREATE TABLE User
  name VARCHAR(256) NOT NULL, 
  email VARCHAR(256) NOT NULL UNIQUE, 
  username VARCHAR(256) NOT NULL UNIQUE, 
- password VARCHAR(256) NOT NULL);
+ password VARCHAR(256) NOT NULL,
+ diet VARCHAR(256) NOT NULL,
+ dairy_free VARBINARY(1) NOT NULL,
+ gluten_free VARBINARY(1) NOT NULL,
+ peanut_allergy VARBINARY(1) NOT NULL,
+ CHECK (diet = 'none' or diet = 'vegetarian'
+ 	or diet = 'vegan' or diet = 'pescetarian'));
 
 CREATE TABLE PossibleGoods
 (name VARCHAR(256) NOT NULL PRIMARY KEY,
@@ -33,15 +39,5 @@ CREATE TABLE Recipe
  dairy_free VARBINARY(1) NOT NULL,
  gluten_free VARBINARY(1) NOT NULL,
  peanut_allergy VARBINARY(1) NOT NULL,
- CHECK (diet = 'none' or diet = 'vegetarian'
- 	or diet = 'vegan' or diet = 'pescetarian'));
-
-CREATE TABLE DietaryRestrictions
-(id INTEGER NOT NULL PRIMARY KEY,
- diet VARCHAR(256) NOT NULL,
- dairy_free VARBINARY(1) NOT NULL,
- gluten_free VARBINARY(1) NOT NULL,
- peanut_allergy VARBINARY(1) NOT NULL,
- FOREIGN KEY (id) REFERENCES User(id),
  CHECK (diet = 'none' or diet = 'vegetarian'
  	or diet = 'vegan' or diet = 'pescetarian'));
