@@ -12,4 +12,11 @@ User(__id__, name, email, username, password, diet, dairy-free, gluten-free, pea
 Primary Keys are __bolded__  <br />
 
 
-Assumption - each user has one fridge
+Assumption - each user has one fridge <br />
+
+Ideas:<br />
+-Carbon Footprint<br />
+-Local Farmer's Markets<br />
+-Food Grown Nearby<br />
+-Tips/Suggestions for healthy and environmentally-responsible eating<br />
+-Nutritional Value of fridge
