@@ -12,6 +12,6 @@ Recipe(name, cuisine, ingredient1, ingredient2, ingredient3, ingredient4, ingred
 User(id, name, email, username, password) <br />
 DietaryRestrictions(id, diet, dairy-free, gluten-free, peanut-allergy) <br />
 
-<u>some text</u>
+__text__
 
 Assumption - each user has one fridge
