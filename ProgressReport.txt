@@ -5,10 +5,7 @@ Getting Data: We plan on using an existing recipe API to create a recipe databas
 Food Recipe API: https://developer.edamam.com/edamam-recipe-api#
 Sample expiration date data: https://docs.google.com/spreadsheets/d/1faPyHv9eSfSz5L_NTbT3Jq5DgU4YO4EfrVeTHcEig7M/edit?usp=sharing
 
-Assumptions we are making about the data being modeled: each user has one fridge
-
-ER Diagram: 
-
+Assumptions we are making about the data being modeled: each user has one fridge, user dietary restrictions are only limited to the options given.
 
 Datatables With Keys:
 PossibleGoods(name, type, days_to_expiration)
