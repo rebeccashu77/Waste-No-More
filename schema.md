@@ -19,4 +19,5 @@ Ideas:<br />
 -Local Farmer's Markets<br />
 -Food Grown Nearby<br />
 -Tips/Suggestions for healthy and environmentally-responsible eating<br />
--Nutritional Value of fridge
+-Nutritional Value of fridge<br />
+-Historical data for each user
