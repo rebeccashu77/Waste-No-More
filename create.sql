@@ -4,10 +4,12 @@ CREATE TABLE User
  email VARCHAR(256) NOT NULL UNIQUE, 
  username VARCHAR(256) NOT NULL UNIQUE, 
  password VARCHAR(256) NOT NULL,
- diet VARCHAR(256) NOT NULL,
- dairy_free VARBINARY(1) NOT NULL,
- gluten_free VARBINARY(1) NOT NULL,
- peanut_allergy VARBINARY(1) NOT NULL,
+ pescatarian BINARY NOT NULL,
+ vegetarian BINARY NOT NULL,
+ vegan BINARY NOT NULL,
+ dairy_free BINARY NOT NULL,
+ gluten_free BINARY NOT NULL,
+ peanut_allergy BINARY NOT NULL,
  CHECK (diet = 'none' or diet = 'vegetarian'
  	or diet = 'vegan' or diet = 'pescetarian'));
 
@@ -35,9 +37,11 @@ CREATE TABLE Recipe
  ingredient3 VARCHAR(256) NOT NULL,
  ingredient4 VARCHAR(256) NOT NULL,
  ingredient5 VARCHAR(256) NOT NULL,
- diet VARCHAR(256) NOT NULL,
- dairy_free VARBINARY(1) NOT NULL,
- gluten_free VARBINARY(1) NOT NULL,
- peanut_allergy VARBINARY(1) NOT NULL,
+ pescatarian BINARY NOT NULL,
+ vegetarian BINARY NOT NULL,
+ vegan BINARY NOT NULL,
+ dairy_free BINARY NOT NULL,
+ gluten_free BINARY NOT NULL,
+ peanut_allergy BINARY NOT NULL,
  CHECK (diet = 'none' or diet = 'vegetarian'
  	or diet = 'vegan' or diet = 'pescetarian'));
