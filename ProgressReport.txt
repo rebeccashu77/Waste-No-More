@@ -1,0 +1,21 @@
+PROGRESS REPORT:
+Application Description: This application will essentially allow users to create a virtual display of their refrigerator, with capabilities to sort these items by name, expiration date, etc. Furthermore, this application will keep track of when each food in the refrigerator will expire, notifying the user when one item is about to expire. Using a recipe database, this web application can also recommend the user recipes based on which foods in the fridge will expire first, as well as how many items in the recipe the refrigerator already contains. This recipe recommendation also takes into account the user’s dietary restrictions and culinary preferences to help recommend the recipes that are best suited towards the user.
+
+Getting Data: We plan on using an existing recipe API to create a recipe database that we will use to help recommend recipes to the user. Additionally, we will generate average expiration periods for common foods in supermarkets, and use this expiration period as a basis for when the foods in the refrigerator expire, which can then be manually adjusted by the user if a specific expiration date is known. The user’s data will come from the user, as they manually enter in their login information and dietary restrictions and preferences.
+Food Recipe API: https://developer.edamam.com/edamam-recipe-api#
+Sample expiration date data: https://docs.google.com/spreadsheets/d/1faPyHv9eSfSz5L_NTbT3Jq5DgU4YO4EfrVeTHcEig7M/edit?usp=sharing
+
+Assumptions we are making about the data being modeled: each user has one fridge
+
+ER Diagram: 
+
+
+Datatables With Keys:
+PossibleGoods(name, type, days_to_expiration)
+Items(name, purchase_date, quantity, expiration_date)
+Recipe(name, cuisine, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5,..., diet, dairy-free, gluten-free, peanut-allergy)
+User(id, name, email, username, password)
+DietaryRestrictions(id, diet, dairy-free, gluten-free, peanut-allergy)
+
+Description of Web Interface:
+The user signs up for an account on the website by clicking a button, where they will need a valid email and username, as well as a password. During the sign up process the user can also identify their dietary restrictions from a drop down menu as needed. After the creation of an account, the user can then login to access their information using either their username or email, and their password. After logging in, the user is shown the items in their fridge and has the option of adding, deleting, or updating items in their refrigerator based on the name of the item, the quantity, and the expiration date, which can either be auto generated or manually adjusted. The process of updating the refrigerator will be accessed using a button. They can also sort the items based on the name of the item or the expiration date, which will be accessed using a drop down menu. If an item is set to expire within a set number of days, a notification will be sent to the user upon login, and the item in the list will turn red. The user also has the option of viewing recipe recommendations based on which foods in the refrigerator will expire first with the click of a button. Upon viewing the recommendations, the user can click each recipe to learn more and to get the full details of the dish.
