@@ -4,7 +4,7 @@ CREATE TABLE User
  email VARCHAR(256) NOT NULL UNIQUE, 
  username VARCHAR(256) NOT NULL UNIQUE, 
  password VARCHAR(256) NOT NULL,
- pescatarian BINARY NOT NULL,
+ pescatarian BINARY(1) NOT NULL,
  vegetarian BINARY NOT NULL,
  vegan BINARY NOT NULL,
  dairy_free BINARY NOT NULL,
