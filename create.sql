@@ -4,12 +4,12 @@ CREATE TABLE User
  email VARCHAR(256) NOT NULL UNIQUE, 
  username VARCHAR(256) NOT NULL UNIQUE, 
  password VARCHAR(256) NOT NULL,
- pescatarian bytea NOT NULL,
- vegetarian bytea NOT NULL,
- vegan bytea NOT NULL,
- dairy_free bytea NOT NULL,
- gluten_free bytea NOT NULL,
- peanut_allergy bytea NOT NULL);
+ pescatarian INTEGER NOT NULL,
+ vegetarian INTEGER NOT NULL,
+ vegan INTEGER NOT NULL,
+ dairy_free INTEGER NOT NULL,
+ gluten_free INTEGER NOT NULL,
+ peanut_allergy INTEGER NOT NULL);
 
 CREATE TABLE PossibleGoods
 (name VARCHAR(256) NOT NULL PRIMARY KEY,
@@ -35,9 +35,9 @@ CREATE TABLE Recipe
  ingredient3 VARCHAR(256) NOT NULL,
  ingredient4 VARCHAR(256) NOT NULL,
  ingredient5 VARCHAR(256) NOT NULL,
- pescatarian bytea NOT NULL,
- vegetarian bytea NOT NULL,
- vegan bytea NOT NULL,
- dairy_free bytea NOT NULL,
- gluten_free bytea NOT NULL,
- peanut_allergy bytea NOT NULL);
+ pescatarian INTEGER NOT NULL,
+ vegetarian INTEGER NOT NULL,
+ vegan INTEGER NOT NULL,
+ dairy_free INTEGER NOT NULL,
+ gluten_free INTEGER NOT NULL,
+ peanut_allergy INTEGER NOT NULL);
