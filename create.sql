@@ -37,7 +37,7 @@ CREATE TABLE Recipe
  ingredient3 VARCHAR(256) NOT NULL,
  ingredient4 VARCHAR(256) NOT NULL,
  ingredient5 VARCHAR(256) NOT NULL,
- pescatarian BINARY NOT NULL,
+ pescatarian BINARY(1) NOT NULL,
  vegetarian BINARY NOT NULL,
  vegan BINARY NOT NULL,
  dairy_free BINARY NOT NULL,
