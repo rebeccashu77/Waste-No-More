@@ -12,9 +12,9 @@ INSERT INTO User VALUES(2, 'Rebecca Shu', 'rjs73@duke.edu', 'rjs73', 'password',
 INSERT INTO User VALUES(3, 'Christina Le', 'cli58@duke.edu', 'cli58', 'password', 0, 1, 0, 0, 1, 1);
 INSERT INTO User VALUES(4, 'Griffin Malm', 'gtm7@duke.edu', 'gtm7', 'password', 0, 1, 0, 1, 1, 1);
 
-INSERT INTO Items VALUES(1, 'apples', '2020-02-15', 10, '2020-03-14');
-INSERT INTO Items VALUES(3, 'bananas', '2020-02-15', 8, '2020-02-19');
-INSERT INTO Items VALUES(2, 'carrots', '2020-02-15', 5, '2020-02-29');
+INSERT INTO Items VALUES(1, 'apple', '2020-02-15', 10, '2020-03-14');
+INSERT INTO Items VALUES(3, 'banana', '2020-02-15', 8, '2020-02-19');
+INSERT INTO Items VALUES(2, 'carrot', '2020-02-15', 5, '2020-02-29');
 INSERT INTO Items VALUES(3, 'eggs', '2020-02-15', 12, '2020-02-27');
 INSERT INTO Items VALUES(1, 'bread', '2020-02-15', 1, '2020-02-22');
 
