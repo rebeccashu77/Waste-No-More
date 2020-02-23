@@ -15,7 +15,7 @@ CREATE TABLE User
     (vegan = 0 OR vegan = 1) AND
     (dairy_free = 0 OR dairy_free = 1) AND
     (gluten_free = 0 OR gluten_free = 1) AND
-    (peanut_allergy = 0 OR peanut_allergy = 1));
+    (peanut_allergy = 0 OR peanut_allergy = 1)));
 
 CREATE TABLE PossibleGoods
 (name VARCHAR(256) NOT NULL PRIMARY KEY,
@@ -52,4 +52,4 @@ CREATE TABLE Recipe
     (vegan = 0 OR vegan = 1) AND
     (dairy_free = 0 OR dairy_free = 1) AND
     (gluten_free = 0 OR gluten_free = 1) AND
-    (peanut_allergy = 0 OR peanut_allergy = 1));
+    (peanut_allergy = 0 OR peanut_allergy = 1)));
