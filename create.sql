@@ -9,9 +9,7 @@ CREATE TABLE User
  vegan bytea NOT NULL,
  dairy_free bytea NOT NULL,
  gluten_free bytea NOT NULL,
- peanut_allergy bytea NOT NULL,
- CHECK (diet = 'none' or diet = 'vegetarian'
- 	or diet = 'vegan' or diet = 'pescetarian'));
+ peanut_allergy bytea NOT NULL);
 
 CREATE TABLE PossibleGoods
 (name VARCHAR(256) NOT NULL PRIMARY KEY,
@@ -42,6 +40,4 @@ CREATE TABLE Recipe
  vegan bytea NOT NULL,
  dairy_free bytea NOT NULL,
  gluten_free bytea NOT NULL,
- peanut_allergy bytea NOT NULL,
- CHECK (diet = 'none' or diet = 'vegetarian'
- 	or diet = 'vegan' or diet = 'pescetarian'));
+ peanut_allergy bytea NOT NULL);
