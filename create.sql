@@ -9,7 +9,13 @@ CREATE TABLE User
  vegan INTEGER NOT NULL,
  dairy_free INTEGER NOT NULL,
  gluten_free INTEGER NOT NULL,
- peanut_allergy INTEGER NOT NULL);
+ peanut_allergy INTEGER NOT NULL,
+ CHECK ((pescatarian = 0 OR pescatarian = 1) AND
+    (vegetarian = 0 OR vegetarian = 1) AND
+    (vegan = 0 OR vegan = 1) AND
+    (dairy_free = 0 OR dairy_free = 1) AND
+    (gluten_free = 0 OR gluten_free = 1) AND
+    (peanut_allergy = 0 OR peanut_allergy = 1));
 
 CREATE TABLE PossibleGoods
 (name VARCHAR(256) NOT NULL PRIMARY KEY,
@@ -40,4 +46,10 @@ CREATE TABLE Recipe
  vegan INTEGER NOT NULL,
  dairy_free INTEGER NOT NULL,
  gluten_free INTEGER NOT NULL,
- peanut_allergy INTEGER NOT NULL);
+ peanut_allergy INTEGER NOT NULL,
+ CHECK ((pescatarian = 0 OR pescatarian = 1) AND
+    (vegetarian = 0 OR vegetarian = 1) AND
+    (vegan = 0 OR vegan = 1) AND
+    (dairy_free = 0 OR dairy_free = 1) AND
+    (gluten_free = 0 OR gluten_free = 1) AND
+    (peanut_allergy = 0 OR peanut_allergy = 1));
