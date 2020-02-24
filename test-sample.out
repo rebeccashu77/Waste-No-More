@@ -11,19 +11,19 @@ WHERE username = 'gtm7';
 --VIEW ACCOUNT INFO
 SELECT name, email, username
 FROM Users
-WHERE Users.id = 1;
-     name      |     email      | username 
----------------+----------------+----------
- Jeevan Tewari | jmt62@duke.edu | jmt62
+WHERE Users.id = 2;
+    name     |     email      | username 
+-------------+----------------+----------
+ Rebecca Shu | rjs73@duke.edu | rjs73
 (1 row)
 
 --DIETARY RESTRICTIONS
 SELECT pescatarian, vegetarian, vegan, dairy_free, gluten_free, peanut_allergy
 FROM Users
-WHERE Users.id = 2;
+WHERE Users.id = 1;
  pescatarian | vegetarian | vegan | dairy_free | gluten_free | peanut_allergy 
 -------------+------------+-------+------------+-------------+----------------
-           0 |          0 |     0 |          0 |           0 |              0
+           1 |          0 |     0 |          1 |           1 |              0
 (1 row)
 
 --WHEN DETERMINING RECIPES → query all recipes with no violations for dietary restriction
@@ -35,7 +35,7 @@ WHERE Users.id = 3 AND Users.dairy_free <= Recipe.dairy_free AND Users.gluten_fr
 firstExpired AS (SELECT T1.name FROM (SELECT name, expiration_date
 FROM Items
 WHERE Items.id = 3 AND (CURRENT_DATE >= expiration_date - 3)
-ORDER BY expiration_date DESC, name ASC) AS T1)
+ORDER BY expiration_date ASC, name ASC) AS T1)
 SELECT *
 FROM AvailableRecipes, firstExpired
 WHERE ingredient1 IN (SELECT name FROM firstExpired) OR ingredient2 IN (SELECT name FROM firstExpired) OR ingredient3 IN (SELECT name FROM firstExpired) OR ingredient4 IN (SELECT name FROM firstExpired) OR ingredient5 IN (SELECT name FROM firstExpired);
@@ -46,11 +46,10 @@ WHERE ingredient1 IN (SELECT name FROM firstExpired) OR ingredient2 IN (SELECT n
 --FIND EXPIRATION DATE → for each food, pull up the expiration date
 SELECT name, expiration_date
 FROM Items
-WHERE Items.id = 3
-ORDER BY expiration_date DESC, name ASC;
+WHERE Items.id = 2
+ORDER BY expiration_date ASC, name ASC;
   name  | expiration_date 
 --------+-----------------
- eggs   | 2020-02-27
- banana | 2020-02-19
-(2 rows)
+ carrot | 2020-02-29
+(1 row)
 
