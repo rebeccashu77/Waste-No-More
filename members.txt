@@ -20,4 +20,6 @@ the application and applied it to the design, wrote dynamic queries for the
 webpage, helped establish relationships for ER diagram, and did research for 
 fake dataset.
 
-Jonathan Yu (jy178)
+Jonathan Yu (jy178) - worked on ER diagram, initial dataset, and schema. 
+helped develop the conceptual design of the website and its features. helped 
+write and debug sample queries. setup git repo for collaborative work
