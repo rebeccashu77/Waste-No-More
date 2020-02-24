@@ -12,12 +12,12 @@ INSERT INTO Users VALUES(3, 'Christina Le', 'cli58@duke.edu', 'cli58', 'password
 INSERT INTO Users VALUES(4, 'Griffin Malm', 'gtm7@duke.edu', 'gtm7', 'password', 0, 1, 0, 1, 1, 1);
 INSERT INTO Users VALUES(5, 'Jonathan Yu', 'jy178@duke.edu', 'jy178', 'password', 0, 0, 1, 1, 0, 0);
 
-INSERT INTO Items VALUES(1, 'apple', '2020-02-15', 10, '2020-03-14');
-INSERT INTO Items VALUES(3, 'banana', '2020-02-15', 8, '2020-02-19');
-INSERT INTO Items VALUES(2, 'carrot', '2020-02-15', 5, '2020-02-29');
-INSERT INTO Items VALUES(3, 'eggs', '2020-02-15', 12, '2020-02-27');
-INSERT INTO Items VALUES(3, 'bread', '2020-02-15', 1, '2020-02-22');
-INSERT INTO Items VALUES(2, 'bread', '2020-02-15', 1, '2020-02-22');
+INSERT INTO Items VALUES(1, 'apple', CURRENT_DATE, 10, CURRENT_DATE+28);
+INSERT INTO Items VALUES(3, 'banana', CURRENT_DATE, 8, CURRENT_DATE+4);
+INSERT INTO Items VALUES(2, 'carrot', CURRENT_DATE, 5, CURRENT_DATE+14);
+INSERT INTO Items VALUES(3, 'eggs', CURRENT_DATE, 12, CURRENT_DATE+28);
+INSERT INTO Items VALUES(3, 'bread', CURRENT_DATE, 1, CURRENT_DATE+7);
+INSERT INTO Items VALUES(2, 'bread', CURRENT_DATE, 1, CURRENT_DATE+7);
 
 INSERT INTO Recipe VALUES('Tacos', 'Mexican', 'Ground beef', 'Cheese', 'Tomato', 'Salsa', 'Taco Shell', 0, 0, 0, 0, 0, 1);
 INSERT INTO Recipe VALUES('Ratatouille', 'French', 'Tomato', 'Eggplant', 'Zucchini', 'Yellow Squash', 'Bell Pepper', 0, 1, 0, 1, 1, 1);
