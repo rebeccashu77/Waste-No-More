@@ -50,6 +50,7 @@ WHERE Items.id = 2
 ORDER BY expiration_date ASC, name ASC;
   name  | expiration_date 
 --------+-----------------
+ bread  | 2020-02-22
  carrot | 2020-02-29
-(1 row)
+(2 rows)
 
