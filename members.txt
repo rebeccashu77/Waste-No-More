@@ -1,6 +1,9 @@
 Griffin Malm (gtm7)
 
 Jeevan Tewari (jmt62)
+Created ER diagram, fake dataset, and schema. Helped conceptually
+with queries and website organization - feels like all members contributed
+equally well.
 
 Rebecca Shu (rjs73)
 
