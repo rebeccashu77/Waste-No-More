@@ -39,11 +39,9 @@ ORDER BY expiration_date ASC, name ASC) AS T1)
 SELECT DISTINCT AvailableRecipes.name, cuisine, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, firstExpired.name
 FROM AvailableRecipes, firstExpired
 WHERE ingredient1 IN (SELECT name FROM firstExpired) OR ingredient2 IN (SELECT name FROM firstExpired) OR ingredient3 IN (SELECT name FROM firstExpired) OR ingredient4 IN (SELECT name FROM firstExpired) OR ingredient5 IN (SELECT name FROM firstExpired);
-     name     | cuisine  | ingredient1 | ingredient2 | ingredient3 | ingredient4 | ingredient5 |  name  
---------------+----------+-------------+-------------+-------------+-------------+-------------+--------
- Banana Bread | American | bread       | banana      | eggs        | butter      |             | banana
- Banana Bread | American | bread       | banana      | eggs        | butter      |             | bread
-(2 rows)
+ name | cuisine | ingredient1 | ingredient2 | ingredient3 | ingredient4 | ingredient5 | name 
+------+---------+-------------+-------------+-------------+-------------+-------------+------
+(0 rows)
 
 --FIND EXPIRATION DATE → for each food, pull up the expiration date
 SELECT name, expiration_date
@@ -52,7 +50,7 @@ WHERE Items.id = 2
 ORDER BY expiration_date ASC, name ASC;
   name  | expiration_date 
 --------+-----------------
- bread  | 2020-02-22
- carrot | 2020-02-29
+ bread  | 2020-03-01
+ carrot | 2020-03-08
 (2 rows)
 
