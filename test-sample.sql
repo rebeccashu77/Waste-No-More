@@ -3,28 +3,28 @@
 --GET USER ID AT LOGIN
 
 SELECT id
-FROM User
+FROM Users
 WHERE username = gtm7;
 
 --VIEW ACCOUNT INFO
 
 SELECT name, email, username
-FROM User
-WHERE User.id = 1;
+FROM Users
+WHERE Users.id = 1;
 
 --DIETARY RESTRICTIONS
 
 SELECT pescatarian, vegetarian, vegan, dairy-free, gluten-free, peanut-allergy
-FROM User
-WHERE User.id = 2;
+FROM Users
+WHERE Users.id = 2;
 
 --WHEN DETERMINING RECIPES → query all recipes with no violations for dietary restriction
 -- → then query based on the ingredient that is going to expire first in their fridge
 
 WITH AvailableRecipes AS
 (SELECT Recipe.name, Recipe.cuisine, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5
-FROM Recipe, User
-WHERE User.id = 3 AND User.dairy-free <= Recipe.dairy-free AND User.gluten-free <= Recipe.gluten-free AND User.peanut-allergy <= Recipe.peanut-allergy AND User.pescatarian <= Recipe.pescatarian AND User.vegetarian <= Recipe.vegetarian AND User.vegan<= Recipe.vegan),
+FROM Recipe, Users
+WHERE Users.id = 3 AND Users.dairy-free <= Recipe.dairy-free AND Users.gluten-free <= Recipe.gluten-free AND Users.peanut-allergy <= Recipe.peanut-allergy AND Users.pescatarian <= Recipe.pescatarian AND Users.vegetarian <= Recipe.vegetarian AND Users.vegan<= Recipe.vegan),
 firstExpired AS (SELECT T1.food FROM (SELECT food, days_to_expiration
 FROM Items
 WHERE Items.id = 3 AND days_to_expiration <= 3
