@@ -8,7 +8,7 @@ INSERT INTO PossibleGoods VALUES('bread', 'grain', 7);
 
 INSERT INTO Users VALUES(1, 'Jeevan Tewari', 'jmt62@duke.edu', 'jmt62', 'password', 1, 0, 0, 1, 1, 0);
 INSERT INTO Users VALUES(2, 'Rebecca Shu', 'rjs73@duke.edu', 'rjs73', 'password', 0, 0, 0, 0, 0, 0);
-INSERT INTO Users VALUES(3, 'Christina Le', 'cli58@duke.edu', 'cli58', 'password', 0, 1, 0, 0, 1, 1);
+INSERT INTO Users VALUES(3, 'Christina Le', 'cli58@duke.edu', 'cli58', 'password', 0, 0, 0, 0, 0, 0);
 INSERT INTO Users VALUES(4, 'Griffin Malm', 'gtm7@duke.edu', 'gtm7', 'password', 0, 1, 0, 1, 1, 1);
 INSERT INTO Users VALUES(5, 'Jonathan Yu', 'jy178@duke.edu', 'jy178', 'password', 0, 0, 1, 1, 0, 0);
 
