@@ -29,7 +29,7 @@ firstExpired AS (SELECT T1.name FROM (SELECT name, expiration_date
 FROM Items
 WHERE Items.id = 3 AND (CURRENT_DATE >= expiration_date - INTEGER '4')
 ORDER BY expiration_date ASC, name ASC) AS T1)
-SELECT DISTINCT AvailableRecipes.name, cuisine, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, firstExpired.name
+SELECT *
 FROM AvailableRecipes, firstExpired
 WHERE ingredient1 IN (SELECT name FROM firstExpired) OR ingredient2 IN (SELECT name FROM firstExpired) OR ingredient3 IN (SELECT name FROM firstExpired) OR ingredient4 IN (SELECT name FROM firstExpired) OR ingredient5 IN (SELECT name FROM firstExpired);
 
