@@ -25,17 +25,17 @@ WITH AvailableRecipes AS
 (SELECT Recipe.name, Recipe.cuisine, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5
 FROM Recipe, Users
 WHERE Users.id = 3 AND Users.dairy-free <= Recipe.dairy-free AND Users.gluten-free <= Recipe.gluten-free AND Users.peanut-allergy <= Recipe.peanut-allergy AND Users.pescatarian <= Recipe.pescatarian AND Users.vegetarian <= Recipe.vegetarian AND Users.vegan<= Recipe.vegan),
-firstExpired AS (SELECT T1.food FROM (SELECT food, days_to_expiration
+firstExpired AS (SELECT T1.name FROM (SELECT name, days_to_expiration
 FROM Items
 WHERE Items.id = 3 AND days_to_expiration <= 3
-ORDER BY days_to_expiration DESC, food ASC) AS T1)
+ORDER BY days_to_expiration DESC, name ASC) AS T1)
 SELECT *
 FROM AvailableRecipes, firstExpired
-WHERE ingredient1 IN (SELECT food FROM firstExpired) OR ingredient2 IN (SELECT food FROM firstExpired) OR ingredient3 IN (SELECT food FROM firstExpired) OR ingredient4 IN (SELECT food FROM firstExpired) OR ingredient5 IN (SELECT food FROM firstExpired);
+WHERE ingredient1 IN (SELECT name FROM firstExpired) OR ingredient2 IN (SELECT name FROM firstExpired) OR ingredient3 IN (SELECT name FROM firstExpired) OR ingredient4 IN (SELECT name FROM firstExpired) OR ingredient5 IN (SELECT name FROM firstExpired);
 
 --FIND EXPIRATION DATE → for each food, pull up the expiration date
 
-SELECT food, days_to_expiration
+SELECT name, days_to_expiration
 FROM Items
 WHERE Items.id = 3
-ORDER BY days_to_expiration DESC, food ASC;
+ORDER BY days_to_expiration DESC, name ASC;
