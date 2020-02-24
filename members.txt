@@ -1,7 +1,13 @@
-Griffin Malm (gtm7)
+Griffin Malm (gtm7) - came up with idea for project, helped design schema, 
+helped refine ER diagram, built create.sql file, debugged load.sql file, added
+more INSERT statements into load.sql file to build better sample data, helped
+figure out the functionality/flow of the website and necessary SQL queries,
+figured out how to drop/create/load database in a virtual machine (and created
+accompanying README.md file), debugged test-sample.sql file, used
+test-sample.sql file to create test-sample.out file
 
 Jeevan Tewari (jmt62) - created ER diagram, fake dataset, and schema. Helped
-with queries concptually and general website design. Feels like every member
+with queries conceptually and general website design. Feels like every member
 contributed equally well and that good progress was made.
 
 Rebecca Shu (rjs73) - helped brainstorm different functions, ideas, and queries 
