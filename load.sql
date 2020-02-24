@@ -17,6 +17,7 @@ INSERT INTO Items VALUES(3, 'banana', '2020-02-15', 8, '2020-02-19');
 INSERT INTO Items VALUES(2, 'carrot', '2020-02-15', 5, '2020-02-29');
 INSERT INTO Items VALUES(3, 'eggs', '2020-02-15', 12, '2020-02-27');
 INSERT INTO Items VALUES(3, 'bread', '2020-02-15', 1, '2020-02-22');
+INSERT INTO Items VALUES(2, 'bread', '2020-02-15', 1, '2020-02-22');
 
 INSERT INTO Recipe VALUES('Tacos', 'Mexican', 'Ground beef', 'Cheese', 'Tomato', 'Salsa', 'Taco Shell', 0, 0, 0, 0, 0, 1);
 INSERT INTO Recipe VALUES('Ratatouille', 'French', 'Tomato', 'Eggplant', 'Zucchini', 'Yellow Squash', 'Bell Pepper', 0, 1, 0, 1, 1, 1);
