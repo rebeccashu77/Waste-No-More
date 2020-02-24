@@ -11,7 +11,7 @@ different APIs for our web application, and wrote up the progress report.
 
 Christina Le (cll58) - created website design/interface, worked on the flow of
 the application and applied it to the design, wrote dynamic queries for the 
-webpage, helped establish relationships for ER diagram, did research for fake
-dataset.
+webpage, helped establish relationships for ER diagram, and did research for 
+fake dataset.
 
 Jonathan Yu (jy178)
