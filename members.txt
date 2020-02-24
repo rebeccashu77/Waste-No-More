@@ -1,9 +1,13 @@
 Griffin Malm (gtm7)
 
-Jeevan Tewari (jmt62)
+Jeevan Tewari (jmt62) - created ER diagram, fake dataset, and schema. Helped
+with queries concptually and general website design. Feels like every member
+contributed equally well and that good progress was made.
 
-Rebecca Shu (rjs73) - helped brainstorm different functions, ideas, and queries for the web application itself, helped write the load file, contributed in creating the fake dataset for possible goods, did research and helped find different APIs for our web application, and wrote up the progress report.
-
+Rebecca Shu (rjs73) - helped brainstorm different functions, ideas, and queries 
+for the web application itself, helped write the load file, contributed in 
+creating the fake dataset for possible goods, did research and helped find 
+different APIs for our web application, and wrote up the progress report.
 
 Christina Le (cll58)
 
