@@ -1,4 +1,10 @@
-Griffin Malm (gtm7)
+Griffin Malm (gtm7) - came up with idea for project, helped design schema, 
+helped refine ER diagram, built create.sql file, debugged load.sql file, added
+more INSERT statements into load.sql file to build better sample data, helped
+figure out the functionality/flow of the website and necessary SQL queries,
+figured out how to drop/create/load database in a virtual machine (and created
+accompanying README.md file), debugged test-sample.sql file, used
+test-sample.sql file to create test-sample.out file
 
 Jeevan Tewari (jmt62) - created ER diagram, fake dataset, and schema. Helped
 with queries conceptually and general website design. Feels like every member
@@ -9,6 +15,9 @@ for the web application itself, helped write the load file, contributed in
 creating the fake dataset for possible goods, did research and helped find 
 different APIs for our web application, and wrote up the progress report.
 
-Christina Le (cll58)
+Christina Le (cll58) - created website design/interface, worked on the flow of
+the application and applied it to the design, wrote dynamic queries for the 
+webpage, helped establish relationships for ER diagram, and did research for 
+fake dataset.
 
 Jonathan Yu (jy178)
