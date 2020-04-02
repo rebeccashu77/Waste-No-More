@@ -4,24 +4,23 @@ CREATE TABLE Users
  email VARCHAR(256) NOT NULL UNIQUE, 
  username VARCHAR(256) NOT NULL UNIQUE, 
  password VARCHAR(256) NOT NULL,
- pescatarian INTEGER NOT NULL,
- vegetarian INTEGER NOT NULL,
- vegan INTEGER NOT NULL,
- dairy_free INTEGER NOT NULL,
- gluten_free INTEGER NOT NULL,
- peanut_allergy INTEGER NOT NULL,
- CHECK ((pescatarian = 0 OR pescatarian = 1) AND
-    (vegetarian = 0 OR vegetarian = 1) AND
-    (vegan = 0 OR vegan = 1) AND
-    (dairy_free = 0 OR dairy_free = 1) AND
-    (gluten_free = 0 OR gluten_free = 1) AND
-    (peanut_allergy = 0 OR peanut_allergy = 1)));
+ dietary_restrictions INTEGER [6],
+ CHECK (
+ 	(dietary_restrictions[1] = 0 OR dietary_restrictions[1] = 1) AND
+    (dietary_restrictions[2] = 0 OR dietary_restrictions[2] = 1) AND
+    (dietary_restrictions[3] = 0 OR dietary_restrictions[3] = 1) AND
+    (dietary_restrictions[4] = 0 OR dietary_restrictions[4] = 1) AND
+    (dietary_restrictions[5] = 0 OR dietary_restrictions[5] = 1) AND
+    (dietary_restrictions[6] = 0 OR dietary_restrictions[6] = 1)
+ )
+);
 
 CREATE TABLE PossibleGoods
 (name VARCHAR(256) NOT NULL PRIMARY KEY,
  type VARCHAR(256) NOT NULL,
  days_to_expiration INTEGER NOT NULL,
- CHECK (days_to_expiration > 0));
+ CHECK (days_to_expiration > 0)
+);
 
 CREATE TABLE Items
 (id INTEGER NOT NULL,
@@ -31,7 +30,8 @@ CREATE TABLE Items
  expiration_date DATE NOT NULL,
  PRIMARY KEY (id, name, purchase_date),
  FOREIGN KEY (name) REFERENCES PossibleGoods(name),
- CHECK (quantity > 0));
+ CHECK (quantity > 0)
+);
 
 CREATE TABLE Recipe
 (name VARCHAR(256) NOT NULL PRIMARY KEY,
@@ -41,15 +41,13 @@ CREATE TABLE Recipe
  ingredient3 VARCHAR(256),
  ingredient4 VARCHAR(256),
  ingredient5 VARCHAR(256),
- pescatarian INTEGER NOT NULL,
- vegetarian INTEGER NOT NULL,
- vegan INTEGER NOT NULL,
- dairy_free INTEGER NOT NULL,
- gluten_free INTEGER NOT NULL,
- peanut_allergy INTEGER NOT NULL,
- CHECK ((pescatarian = 0 OR pescatarian = 1) AND
-    (vegetarian = 0 OR vegetarian = 1) AND
-    (vegan = 0 OR vegan = 1) AND
-    (dairy_free = 0 OR dairy_free = 1) AND
-    (gluten_free = 0 OR gluten_free = 1) AND
-    (peanut_allergy = 0 OR peanut_allergy = 1)));
+ dietary_restrictions INTEGER [6],
+ CHECK (
+ 	(dietary_restrictions[1] = 0 OR dietary_restrictions[1] = 1) AND
+    (dietary_restrictions[2] = 0 OR dietary_restrictions[2] = 1) AND
+    (dietary_restrictions[3] = 0 OR dietary_restrictions[3] = 1) AND
+    (dietary_restrictions[4] = 0 OR dietary_restrictions[4] = 1) AND
+    (dietary_restrictions[5] = 0 OR dietary_restrictions[5] = 1) AND
+    (dietary_restrictions[6] = 0 OR dietary_restrictions[6] = 1)
+ )
+);
