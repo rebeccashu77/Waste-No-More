@@ -1,0 +1,78 @@
+.SignUp {
+    background-image: url('./signup-background.jpeg');
+    background-color: lavender;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  .signup-content  {
+    left: 45%;
+    position: absolute;
+    top: 45%;
+    transform: translate(-50%, -55%);
+    text-align: center;
+  }
+  .signup-container {
+    left: 300px;
+    background-color: sandybrown;
+    width: 400px;
+    height: 520px;
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    border-radius: 50px;
+  }
+  .signup-container h2 {
+      color: green;
+      font-weight: bold;
+      font-size: 40px;
+  }
+  .input-email {
+      bottom: 10px;
+      height: 45px;
+      width: 300px;
+      margin-left: 45px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.2rem;
+  }
+  .input-username {
+    bottom: 10px;
+    height: 45px;
+    width: 300px;
+    margin-left: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+}
+.input-password {
+    bottom: 10px;
+    height: 45px;
+    width: 300px;
+    margin-left: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+}
+.input-confirmpassword {
+    bottom: 10px;
+    height: 45px;
+    width: 300px;
+    margin-left: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+}
+.signup-container button{
+    background-color: green;
+    width: 7.33rem;
+    height: 3rem;;
+    margin-left: 1em;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: .2em;
+    border-color: white;
+    border-style: double;
+  }
+  .signup-container button:hover{
+    background-color: black;
+  }  
