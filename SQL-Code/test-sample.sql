@@ -14,7 +14,7 @@ WHERE Users.id = 2;
 
 --DIETARY RESTRICTIONS
 
-SELECT pescatarian, vegetarian, vegan, dairy_free, gluten_free, peanut_allergy
+SELECT dietary_restrictions
 FROM Users
 WHERE Users.id = 1;
 
@@ -24,7 +24,7 @@ WHERE Users.id = 1;
 WITH AvailableRecipes AS
 (SELECT Recipe.name, Recipe.cuisine, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5
 FROM Recipe, Users
-WHERE Users.id = 3 AND Users.dairy_free <= Recipe.dairy_free AND Users.gluten_free <= Recipe.gluten_free AND Users.peanut_allergy <= Recipe.peanut_allergy AND Users.pescatarian <= Recipe.pescatarian AND Users.vegetarian <= Recipe.vegetarian AND Users.vegan<= Recipe.vegan),
+WHERE Users.id = 3 AND Users.dietary_restrictions[1] <= Recipe.dietary_restrictions[1] AND Users.dietary_restrictions[2] <= Recipe.dietary_restrictions[2] AND Users.dietary_restrictions[3] <= Recipe.dietary_restrictions[3] AND Users.dietary_restrictions[4] <= Recipe.dietary_restrictions[4] AND Users.dietary_restrictions[5] <= Recipe.dietary_restrictions[5] AND Users.dietary_restrictions[6]<= Recipe.dietary_restrictions[6]),
 firstExpired AS (SELECT T1.name FROM (SELECT name, expiration_date
 FROM Items
 WHERE Items.id = 3 AND (CURRENT_DATE >= expiration_date - INTEGER '4')
