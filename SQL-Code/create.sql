@@ -36,11 +36,7 @@ CREATE TABLE Items
 CREATE TABLE Recipe
 (name VARCHAR(256) NOT NULL PRIMARY KEY,
  cuisine VARCHAR(256) NOT NULL,
- ingredient1 VARCHAR(256),
- ingredient2 VARCHAR(256),
- ingredient3 VARCHAR(256),
- ingredient4 VARCHAR(256),
- ingredient5 VARCHAR(256),
+ ingredients text[],
  dietary_restrictions INTEGER [6],
  CHECK (
  	(dietary_restrictions[1] = 0 OR dietary_restrictions[1] = 1) AND
