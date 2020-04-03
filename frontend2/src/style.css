@@ -1,0 +1,78 @@
+.master-heading{
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 2%;
+}
+
+.form-container{
+    background-image: url('./orange.svg');
+    padding-left: 10%;
+    background-position: right;
+    background-repeat: no-repeat;
+    /* padding-top:2%; */
+}
+.orange-form{
+    background-color:#FFCF7E;
+    border-radius: 20px;
+    flex-direction: column;
+    width: 400px;
+    height: 550px;
+    color: #177A00 !important;
+  }
+
+.signup-text{
+    font-size: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    padding-right: 5px;
+    color: #177A00;
+}
+
+.next-button{
+    background-color:rgb(160, 210, 137);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    flex-direction: column;
+    max-width: 150px;
+    max-height: 60px;
+    font-size:  30px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.back-button{
+    background-color:rgb(160, 210, 137, 0.43) !important;
+}
+
+.button-container{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 70%;
+}
+
+.next-button:hover{
+    background-color:#177A00;
+}
+
+.back-button:hover{
+    background-color:rgb(160, 210, 137, 0.43);
+}
+
+.add-delete-button{
+    background-color: #FFB76F;
+    color: white;
+    font-size: 30px;
+    width: 200px;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+    font-weight: bold;
+}
