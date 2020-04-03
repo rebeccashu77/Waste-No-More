@@ -29,6 +29,7 @@ CREATE TABLE Items
  quantity INTEGER NOT NULL,
  expiration_date DATE NOT NULL,
  PRIMARY KEY (id, name, purchase_date),
+ FOREIGN KEY (id) REFERENCES Users(id),
  FOREIGN KEY (name) REFERENCES PossibleGoods(name),
  CHECK (quantity > 0)
 );

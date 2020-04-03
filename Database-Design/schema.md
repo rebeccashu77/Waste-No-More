@@ -21,3 +21,5 @@ Ideas:<br />
 -Tips/Suggestions for healthy and environmentally-responsible eating<br />
 -Nutritional Value of fridge<br />
 -Historical data for each user
+-Collect expiration data (was this food expired when we said it was?)
+-Storage method
