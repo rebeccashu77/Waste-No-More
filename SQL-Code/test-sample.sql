@@ -22,7 +22,7 @@ WHERE Users.id = 1;
 -- → then query based on the ingredient that is going to expire first in their fridge
 
 WITH AvailableRecipes AS
-(SELECT Recipe.name, Recipe.cuisine, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5
+(SELECT Recipe.name, Recipe.cuisine, ingredients
 FROM Recipe, Users
 WHERE Users.id = 3 AND Users.dietary_restrictions[1] <= Recipe.dietary_restrictions[1] AND Users.dietary_restrictions[2] <= Recipe.dietary_restrictions[2] AND Users.dietary_restrictions[3] <= Recipe.dietary_restrictions[3] AND Users.dietary_restrictions[4] <= Recipe.dietary_restrictions[4] AND Users.dietary_restrictions[5] <= Recipe.dietary_restrictions[5] AND Users.dietary_restrictions[6]<= Recipe.dietary_restrictions[6]),
 firstExpired AS (SELECT T1.name FROM (SELECT name, expiration_date
@@ -31,7 +31,7 @@ WHERE Items.id = 3 AND (CURRENT_DATE >= expiration_date - INTEGER '4')
 ORDER BY expiration_date ASC, name ASC) AS T1)
 SELECT *
 FROM AvailableRecipes, firstExpired
-WHERE ingredient1 IN (SELECT name FROM firstExpired) OR ingredient2 IN (SELECT name FROM firstExpired) OR ingredient3 IN (SELECT name FROM firstExpired) OR ingredient4 IN (SELECT name FROM firstExpired) OR ingredient5 IN (SELECT name FROM firstExpired);
+WHERE ingredients[1] IN (SELECT name FROM firstExpired) OR ingredients[2] IN (SELECT name FROM firstExpired) OR ingredients[3] IN (SELECT name FROM firstExpired);
 
 --FIND EXPIRATION DATE → for each food, pull up the expiration date
 
