@@ -1,0 +1,94 @@
+.Diet {
+    background-image: url('./diet-background.jpg');
+    background-color: lavender;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+
+  .diet-container {
+    flex-direction: column;
+    display: flex;
+  }
+  #diet-heading{ 
+    color: white;
+    padding-top: 20px;
+  }
+
+  .dietary-options{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #177A00;
+    font-size: 30px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    padding-left: 25%;
+  }
+
+  .back-button-container{
+      padding-right: 5px;
+  }
+
+/* .vegetarian {
+    font-family: Arial, Helvetica, sans-serif;
+    color: green;
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+.input-vegetarian {
+    height: 30px;
+    width: 30px;
+}
+.vegan {
+    font-family: Arial, Helvetica, sans-serif;
+    color: green;
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+.input-vegan {
+    height: 30px;
+    width: 30px;
+}
+.pescatarian {
+    font-family: Arial, Helvetica, sans-serif;
+    color: green;
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+.input-pescatarian {
+    height: 30px;
+    width: 30px;
+}
+.peanut-free {
+    font-family: Arial, Helvetica, sans-serif;
+    color: green;
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+.input-peanutfree {
+    height: 30px;
+    width: 30px;
+}
+.gluten-free {
+    font-family: Arial, Helvetica, sans-serif;
+    color: green;
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+.input-glutenfree {
+    height: 30px;
+    width: 30px;
+}
+.dairy-free {
+    font-family: Arial, Helvetica, sans-serif;
+    color: green;
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+.input-dairyfree {
+    height: 30px;
+    width: 30px;
+} */
+  .diet-button button:hover{
+    background-color: lightgreen;
+  }  
