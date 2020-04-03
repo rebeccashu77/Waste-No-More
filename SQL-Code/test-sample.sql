@@ -22,7 +22,7 @@ WHERE Users.id = 1;
 -- → then query based on the ingredient that is going to expire first in their fridge
 
 WITH AvailableRecipes AS
-(SELECT Recipe.name, Recipe.cuisine, ingredients
+(SELECT Recipe.name, Recipe.cuisine, Recipe.ingredients
 FROM Recipe, Users
 WHERE Users.id = 3 AND Users.dietary_restrictions[1] <= Recipe.dietary_restrictions[1] AND Users.dietary_restrictions[2] <= Recipe.dietary_restrictions[2] AND Users.dietary_restrictions[3] <= Recipe.dietary_restrictions[3] AND Users.dietary_restrictions[4] <= Recipe.dietary_restrictions[4] AND Users.dietary_restrictions[5] <= Recipe.dietary_restrictions[5] AND Users.dietary_restrictions[6]<= Recipe.dietary_restrictions[6]),
 firstExpired AS (SELECT T1.name FROM (SELECT name, expiration_date
