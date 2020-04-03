@@ -19,9 +19,9 @@ INSERT INTO Items VALUES(3, 'eggs', CURRENT_DATE, 12, CURRENT_DATE+28);
 INSERT INTO Items VALUES(3, 'bread', CURRENT_DATE, 1, CURRENT_DATE+7);
 INSERT INTO Items VALUES(2, 'bread', CURRENT_DATE, 1, CURRENT_DATE+7);
 
-INSERT INTO Recipe VALUES('Tacos', 'Mexican', 'Ground beef', 'Cheese', 'Tomato', 'Salsa', 'Taco Shell', '{0, 0, 0, 0, 0, 1}');
-INSERT INTO Recipe VALUES('Ratatouille', 'French', 'Tomato', 'Eggplant', 'Zucchini', 'Yellow Squash', 'Bell Pepper', '{0, 1, 0, 1, 1, 1}');
-INSERT INTO Recipe VALUES('Cheeseburger', 'American', 'Ground beef', 'Cheese', 'Buns', 'Tomato', NULL, '{0, 0, 0, 0, 0, 0}');
-INSERT INTO Recipe VALUES('Chicken Parmesan', 'Italian', 'Chicken', 'Cheese', 'Tomato', 'Pasta', 'Bread', '{0, 0, 0, 0, 0, 1}');
-INSERT INTO Recipe VALUES('Pizza', 'Italian', 'Bread', 'Cheese', 'Tomato', NULL, NULL, '{0, 1, 0, 0, 0, 1}');
-INSERT INTO Recipe VALUES('Banana Bread', 'American', 'bread', 'banana', 'eggs', 'butter', NULL, '{1, 1, 0, 0, 0, 1}');
+INSERT INTO Recipe VALUES('Tacos', 'Mexican', '{"ground beef", "cheese", "tomato", "salsa", "taco shell"}', '{0, 0, 0, 0, 0, 1}');
+INSERT INTO Recipe VALUES('Ratatouille', 'French', '{"tomato", "eggplant", "zucchini", "yellow squash", "bell pepper"}', '{0, 1, 0, 1, 1, 1}');
+INSERT INTO Recipe VALUES('Cheeseburger', 'American', '{"ground beef", "cheese", "buns", "tomato"}', '{0, 0, 0, 0, 0, 0}');
+INSERT INTO Recipe VALUES('Chicken Parmesan', 'Italian', '{"chicken", "cheese", "tomato", "pasta", "bread"}', '{0, 0, 0, 0, 0, 1}');
+INSERT INTO Recipe VALUES('Pizza', 'Italian', '{"bread", "cheese", "tomato"}', '{0, 1, 0, 0, 0, 1}');
+INSERT INTO Recipe VALUES('Banana Bread', 'American', '{"bread", "banana", "eggs", "butter"}', '{1, 1, 0, 0, 0, 1}');
