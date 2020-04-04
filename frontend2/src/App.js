@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Logo from './logo.png';
 
-import { BrowserRouter, Route, Link } from 'react-router-dom'; 
+import { BrowserRouter, Route, Link, Redirect } from 'react-router-dom'; 
 import home from './Home/home.js';
 import SignUp from './SignUp/signup.js'; 
 import Diet from './Diet/diet.js';
@@ -11,13 +11,44 @@ import SignIn from './SignIn/signin.js';
 import ConfirmAdd from './Add/confirm.js';
 
 import './App.css';
+import fire from './config/fire';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.logout = this.logout.bind(this);
+    this.state = {
+      user:{},
+    }
+  }
+
+logout() {
+  fire.auth().signOut();
+}
+
+  componentDidMount() {
+    this.authListener();
+  }
+
+  authListener() {
+    fire.auth().onAuthStateChanged((user) => {
+      //console.log(user);
+      if (user) {
+        this.setState({ user });
+        console.log("Hello");
+      //localStorage.setItem('user', user.uid);
+      } else {
+        console.log("Hi");
+        this.setState({user : null});
+      //localStorage.removeItem('user');
+      }
+    });
+  }
+
   render() {
   return (
     <BrowserRouter>
       <div className="App">
-
         {/* Navigation Bar */}
         <nav className="navbar navbar-expand-md">
           <div className="navigation-sub">
@@ -29,12 +60,21 @@ class App extends Component {
 
             <Link to="/signin" className="home-link">sign in</Link>
 
+            
+						<button type="submit" 
+						onClick = {this.logout} 
+						value = "next>" 
+						class = "home-link">Log Out
+						</button>
+        
+
           </div>
         </nav>
 
         {/* Page Content */}
       <div className="main-container">
           {/* Routing different pages */}
+          {this.state.user ? (<Redirect to = "/fridge"/>) : (<Redirect to = "/"/>)}
           <Route exact path="/" component={home} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/diet" component={Diet} />
