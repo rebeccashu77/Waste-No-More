@@ -80,15 +80,15 @@ class SignUp extends Component {
 
 		const {username, password, confirmpass} = this.state;
 		if(confirmpass !== password) {
-			//return <Redirect to = "/signup"/>
-			alert("Passwrods Dont Match");
+			alert("Passwords Dont Match");
+			return <Redirect to = "/signup"/>
+		} else {
+			fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
+			}).then((u)=>{console.log(u)})
+			.catch((error) => {
+				console.log(error);
+			})
 		}
-
-		fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
-		}).then((u)=>{console.log(u)})
-		.catch((error) => {
-			console.log(error);
-		})
 	}
 
 	displayLogin(e) {

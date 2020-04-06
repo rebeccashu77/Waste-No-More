@@ -60,13 +60,13 @@ logout() {
 
             <Link to="/signin" className="home-link">sign in</Link>
 
-            
+            {this.state.user ? (<Link to = "/diet" className = "home-link"  >diet</Link>) : (null)}
+
 						<button type="submit" 
 						onClick = {this.logout} 
 						value = "next>" 
-						class = "home-link">Log Out
+						class = "home-link pull-right">Log Out
 						</button>
-        
 
           </div>
         </nav>

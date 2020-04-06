@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import 'firebase/firestore';
 
 const config = {
     apiKey: "AIzaSyBekDBkZ4FPMke-kxhXV4kqGkqv6JtwakM",
@@ -11,4 +12,14 @@ const config = {
     measurementId: "G-NJXLHMP5FE"
   };
 const fire = firebase.initializeApp(config);
+
+// const myFirebase = firebase.database().ref();
+
+// const fridges = myFirebase.child("fridges");
+
+// fridges.push({
+//   "user": "jonathan.yu@duke.edu",
+//   "foods": ["Spinach", "Mushrooms", "Tofu", "Strawberries"]
+// })
+
 export default fire;
