@@ -23,5 +23,5 @@ ORDER BY name ASC;
 --VIEW USER'S FRIDGE
 SELECT name, expiration_date
 FROM Items
-WHERE Items.id = 3
+WHERE Items.id = 11
 ORDER BY expiration_date ASC, name ASC;
