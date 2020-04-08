@@ -4,6 +4,9 @@ import '../style.css';
 import { Route, Link } from 'react-router-dom'; 
 import { findAllByDisplayValue } from "@testing-library/react";
 
+import firebase from 'firebase';
+import 'firebase/firestore';
+
 export class Fridge extends Component {
     constructor(props) {
         super(props);
@@ -15,7 +18,17 @@ export class Fridge extends Component {
 
     render() {
         const empty = this.state.empty;
-        let fridge;
+        const db = firebase.firestore();
+        let fridgeRef = db.collection('users').doc('jmt62@duke.edu');
+        let fridge = fridgeRef.get()
+            .then(doc => {
+                if (doc.exists) {
+                    console.log(doc.data());
+                }
+            })
+            .catch(err => {
+                console.log('Error getting document', err);
+            });
         // var test=localStorage.getItem("food");
         // console.log(test);
 

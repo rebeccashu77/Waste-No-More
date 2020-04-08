@@ -12,8 +12,8 @@ class Home extends Component {
         <div className="home">
             <Route exact path="/signup" component={SignUp} />
 
-          <div class="home-overlay"></div>
-          <div class="home-description">
+          <div className="home-overlay"></div>
+          <div className="home-description">
             <h1>Waste No More</h1>
             <p>Keeping track of what's in your fridge can be hard. We're here to help.</p>  
               <div className="home-start">
