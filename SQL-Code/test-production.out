@@ -1,4 +1,3 @@
---WEBSITE DESIGN:
 --GET USER ID AT LOGIN
 SELECT id
 FROM Users
@@ -26,130 +25,202 @@ WHERE Users.id = 1;
  {1,0,0,1,1,0}
 (1 row)
 
---VIEW POSSIBLE ITEMS TO ADD TO FRIDGE
-SELECT name
+--SEARCH ITEMS TO ADD TO FRIDGE (add-by-search feature)
+SELECT name, type
+FROM PossibleGoods
+WHERE name LIKE 'ca%'
+ORDER BY name ASC, type ASC;
+    name     |   type    
+-------------+-----------
+ cabbage     | vegetable
+ cantaloupe  | fruit
+ carrot      | vegetable
+ catfish     | protein
+ cauliflower | vegetable
+(5 rows)
+
+--VIEW ALL POSSIBLE ITEMS TO ADD TO FRIDGE
+SELECT name, type
 FROM PossibleGoods
 ORDER BY name ASC;
-         name         
-----------------------
- almond milk
+         name         |   type    
+----------------------+-----------
+ almond milk          | dairy
+ apple                | fruit
+ apricot              | fruit
+ artichoke            | vegetable
+ asiago cheese        | dairy
+ asparagus            | vegetable
+ avocado              | fruit
+ baby carrots         | vegetable
+ bacon                | protein
+ bagel                | grain
+ banana               | fruit
+ bell pepper          | vegetable
+ blueberries          | fruit
+ bologna              | protein
+ bread                | grain
+ brie cheese          | dairy
+ broccoli             | vegetable
+ brussel sprouts      | vegetable
+ butter               | dairy
+ buttermilk           | dairy
+ cabbage              | vegetable
+ cantaloupe           | fruit
+ carrot               | vegetable
+ catfish              | protein
+ cauliflower          | vegetable
+ celery               | vegetable
+ cheddar cheese       | dairy
+ cherries             | fruit
+ chicken              | protein
+ clams                | protein
+ coconut              | fruit
+ coconut milk         | dairy
+ cod                  | protein
+ corn                 | vegetable
+ corn tortillas       | grain
+ cottage cheese       | dairy
+ cream cheese         | dairy
+ cucumber             | vegetable
+ deli meat            | protein
+ eggplant             | vegetable
+ eggs                 | protein
+ feta cheese          | dairy
+ fig                  | fruit
+ flour tortillas      | grain
+ gorgonzola cheese    | dairy
+ grapefruit           | fruit
+ grapes               | fruit
+ green beans          | vegetable
+ ground beef          | protein
+ half and half        | dairy
+ halibut              | protein
+ ham                  | protein
+ honeydew             | fruit
+ hot dogs             | protein
+ ice cream            | dairy
+ kale                 | vegetable
+ kiwi                 | fruit
+ lemon                | fruit
+ lemongrass           | vegetable
+ lettuce              | vegetable
+ lime                 | fruit
+ mango                | fruit
+ milk                 | dairy
+ monterey jack cheese | dairy
+ mozzarella cheese    | dairy
+ muenster cheese      | dairy
+ mushrooms            | vegetable
+ mussels              | protein
+ onion                | vegetable
+ orange               | fruit
+ oysters              | protein
+ papaya               | fruit
+ parmesan cheese      | dairy
+ parsnips             | vegetable
+ passion fruit        | fruit
+ peach                | fruit
+ pear                 | fruit
+ pineapple            | fruit
+ pomegranate          | fruit
+ pork chops           | protein
+ pork loin            | protein
+ pork sausage         | protein
+ pork shoulder        | protein
+ potato               | vegetable
+ pudding              | dairy
+ romano cheese        | dairy
+ salami               | protein
+ salmon               | protein
+ shrimp               | protein
+ snap peas            | protein
+ sour cream           | dairy
+ soy milk             | dairy
+ spinach              | vegetable
+ squash               | vegetable
+ steak                | protein
+ strawberries         | fruit
+ sweet potato         | vegetable
+ swiss cheese         | dairy
+ tilapia              | protein
+ tofu                 | protein
+ tomato               | fruit
+ turkey               | protein
+ watermelon           | fruit
+ yogurt               | dairy
+ zucchini             | vegetable
+(105 rows)
+
+--VIEW ALL POSSIBLE TYPES OF FOOD TO ADD TO FRIDGE (add-by-type feature)
+SELECT DISTINCT type
+FROM PossibleGoods
+ORDER BY type ASC;
+   type    
+-----------
+ dairy
+ fruit
+ grain
+ protein
+ vegetable
+(5 rows)
+
+--VIEW ALL POSSIBLE FRUITS TO ADD TO FRIDGE (add-by-type feature)
+SELECT name
+FROM PossibleGoods
+WHERE type = 'fruit'
+ORDER BY name ASC;
+     name      
+---------------
  apple
  apricot
- artichoke
- asiago cheese
- asparagus
  avocado
- baby carrots
- bacon
- bagel
  banana
- bell pepper
  blueberries
- bologna
- bread
- brie cheese
- broccoli
- brussel sprouts
- butter
- buttermilk
- cabbage
  cantaloupe
- carrot
- catfish
- cauliflower
- celery
- cheddar cheese
  cherries
- chicken
- clams
  coconut
- coconut milk
- cod
- corn
- corn tortillas
- cottage cheese
- cream cheese
- cucumber
- deli meat
- eggplant
- eggs
- feta cheese
  fig
- flour tortillas
- gorgonzola cheese
  grapefruit
  grapes
- green beans
- ground beef
- half and half
- halibut
- ham
  honeydew
- hot dogs
- ice cream
- kale
  kiwi
  lemon
- lemongrass
- lettuce
  lime
  mango
- milk
- monterey jack cheese
- mozzarella cheese
- muenster cheese
- mushrooms
- mussels
- onion
  orange
- oysters
  papaya
- parmesan cheese
- parsnips
  passion fruit
  peach
  pear
  pineapple
  pomegranate
- pork chops
- pork loin
- pork sausage
- pork shoulder
- potato
- pudding
- romano cheese
- salami
- salmon
- shrimp
- snap peas
- sour cream
- soy milk
- spinach
- squash
- steak
  strawberries
- sweet potato
- swiss cheese
- tilapia
- tofu
  tomato
- turkey
  watermelon
- yogurt
- zucchini
-(105 rows)
+(26 rows)
 
 --VIEW USER'S FRIDGE
-SELECT name, expiration_date
+SELECT name, quantity, expiration_date
 FROM Items
 WHERE Items.id = 11
 ORDER BY expiration_date ASC, name ASC;
-    name     | expiration_date 
--------------+-----------------
- halibut     | 2020-04-09
- banana      | 2020-04-14
- bell pepper | 2020-04-17
- eggplant    | 2020-04-21
- eggs        | 2020-04-28
+    name     | quantity | expiration_date 
+-------------+----------+-----------------
+ halibut     |        3 | 2020-04-09
+ banana      |        6 | 2020-04-14
+ bell pepper |        4 | 2020-04-17
+ eggplant    |        1 | 2020-04-21
+ eggs        |       12 | 2020-04-28
 (5 rows)
+
+--VIEW FOODS EXPIRING SOON
+SELECT name, quantity, expiration_date
+FROM Items
+WHERE Items.id = 11 AND (CURRENT_DATE >= expiration_date - INTEGER '4')
+ORDER BY expiration_date ASC, name ASC;
+  name   | quantity | expiration_date 
+---------+----------+-----------------
+ halibut |        3 | 2020-04-09
+(1 row)
 
