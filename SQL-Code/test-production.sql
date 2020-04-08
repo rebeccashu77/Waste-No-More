@@ -16,7 +16,7 @@ FROM Users
 WHERE Users.id = 1;
 
 --VIEW POSSIBLE ITEMS TO ADD TO FRIDGE
-SELECT name
+SELECT PossibleGoods.name
 FROM PossibleGoods
 GROUP BY type;
 
