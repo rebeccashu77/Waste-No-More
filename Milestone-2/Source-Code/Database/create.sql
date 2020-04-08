@@ -33,3 +33,9 @@ CREATE TABLE Items
  FOREIGN KEY (name) REFERENCES PossibleGoods(name),
  CHECK (quantity > 0)
 );
+
+CREATE INDEX FoodType
+ON PossibleGoods(type);
+
+CREATE INDEX ExpirationDate
+ON Items(expiration_date);
