@@ -1,0 +1,153 @@
+--WEBSITE DESIGN:
+--GET USER ID AT LOGIN
+SELECT id
+FROM Users
+WHERE email = 'gtm7@duke.edu';
+ id 
+----
+  4
+(1 row)
+
+--VIEW ACCOUNT INFO
+SELECT name, email, username
+FROM Users
+WHERE Users.id = 2;
+    name     |     email      | username 
+-------------+----------------+----------
+ Rebecca Shu | rjs73@duke.edu | rjs73
+(1 row)
+
+--DIETARY RESTRICTIONS
+SELECT dietary_restrictions
+FROM Users
+WHERE Users.id = 1;
+ dietary_restrictions 
+----------------------
+ {1,0,0,1,1,0}
+(1 row)
+
+--VIEW POSSIBLE ITEMS TO ADD TO FRIDGE
+SELECT name
+FROM PossibleGoods
+ORDER BY name ASC;
+         name         
+----------------------
+ almond milk
+ apple
+ apricot
+ artichoke
+ asiago cheese
+ asparagus
+ avocado
+ baby carrots
+ bacon
+ bagel
+ banana
+ bell pepper
+ blueberries
+ bologna
+ bread
+ brie cheese
+ broccoli
+ brussel sprouts
+ butter
+ buttermilk
+ cabbage
+ cantaloupe
+ carrot
+ catfish
+ cauliflower
+ celery
+ cheddar cheese
+ cherries
+ chicken
+ clams
+ coconut
+ coconut milk
+ cod
+ corn
+ corn tortillas
+ cottage cheese
+ cream cheese
+ cucumber
+ deli meat
+ eggplant
+ eggs
+ feta cheese
+ fig
+ flour tortillas
+ gorgonzola cheese
+ grapefruit
+ grapes
+ green beans
+ ground beef
+ half and half
+ halibut
+ ham
+ honeydew
+ hot dogs
+ ice cream
+ kale
+ kiwi
+ lemon
+ lemongrass
+ lettuce
+ lime
+ mango
+ milk
+ monterey jack cheese
+ mozzarella cheese
+ muenster cheese
+ mushrooms
+ mussels
+ onion
+ orange
+ oysters
+ papaya
+ parmesan cheese
+ parsnips
+ passion fruit
+ peach
+ pear
+ pineapple
+ pomegranate
+ pork chops
+ pork loin
+ pork sausage
+ pork shoulder
+ potato
+ pudding
+ romano cheese
+ salami
+ salmon
+ shrimp
+ snap peas
+ sour cream
+ soy milk
+ spinach
+ squash
+ steak
+ strawberries
+ sweet potato
+ swiss cheese
+ tilapia
+ tofu
+ tomato
+ turkey
+ watermelon
+ yogurt
+ zucchini
+(105 rows)
+
+--VIEW USER'S FRIDGE
+SELECT name, expiration_date
+FROM Items
+WHERE Items.id = 3
+ORDER BY expiration_date ASC, name ASC;
+  name  | expiration_date 
+--------+-----------------
+ banana | 2020-04-14
+ bread  | 2020-04-14
+ eggs   | 2020-04-28
+(3 rows)
+
