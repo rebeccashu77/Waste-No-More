@@ -1,5 +1,3 @@
--- Some initial data to play with.  These INSERT statements should succeed.
--- Do NOT modify these.
 INSERT INTO PossibleGoods VALUES('apple', 'fruit', 30);
 INSERT INTO PossibleGoods VALUES('apricot', 'fruit', 7);
 INSERT INTO PossibleGoods VALUES('avocado', 'fruit', 4);
@@ -175,10 +173,3 @@ INSERT INTO Items VALUES(12, 'zucchini', CURRENT_DATE, 5, CURRENT_DATE+7);
 INSERT INTO Items VALUES(4, 'tomato', CURRENT_DATE, 5, CURRENT_DATE+14);
 INSERT INTO Items VALUES(5, 'banana', CURRENT_DATE, 5, CURRENT_DATE+7);
 INSERT INTO Items VALUES(2, 'eggs', CURRENT_DATE, 12, CURRENT_DATE+21);
-
-INSERT INTO Recipe VALUES('Tacos', 'Mexican', '{"ground beef", "cheese", "tomato"}', '{0, 0, 0, 0, 0, 1}');
-INSERT INTO Recipe VALUES('Ratatouille', 'French', '{"tomato", "eggplant", "zucchini", "squash", "bell pepper"}', '{0, 1, 0, 1, 1, 1}');
-INSERT INTO Recipe VALUES('Cheeseburger', 'American', '{"ground beef", "cheese", "buns", "tomato"}', '{0, 0, 0, 0, 0, 0}');
-INSERT INTO Recipe VALUES('Chicken Parmesan', 'Italian', '{"chicken", "cheese", "tomato", "pasta", "bread"}', '{0, 0, 0, 0, 0, 1}');
-INSERT INTO Recipe VALUES('Pizza', 'Italian', '{"bread", "cheese", "tomato"}', '{0, 1, 0, 0, 0, 1}');
-INSERT INTO Recipe VALUES('Banana Bread', 'American', '{"bread", "banana", "eggs", "butter"}', '{1, 1, 0, 0, 0, 1}');
