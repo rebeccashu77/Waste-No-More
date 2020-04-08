@@ -16,7 +16,7 @@ WHERE Users.id = 1;
 --SEARCH ITEMS TO ADD TO FRIDGE (add-by-search feature)
 SELECT name, type
 FROM PossibleGoods
-WHERE name = 'ca%'
+WHERE name LIKE 'ca%'
 ORDER BY name ASC, type ASC;
 
 --VIEW ALL POSSIBLE ITEMS TO ADD TO FRIDGE
@@ -25,7 +25,7 @@ FROM PossibleGoods
 ORDER BY name ASC;
 
 --VIEW ALL POSSIBLE TYPES OF FOOD TO ADD TO FRIDGE (add-by-type feature)
-SELECT type
+SELECT DISTINCT type
 FROM PossibleGoods
 ORDER BY type ASC;
 
