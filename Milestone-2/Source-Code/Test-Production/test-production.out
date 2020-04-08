@@ -28,11 +28,16 @@ WHERE Users.id = 1;
 --SEARCH ITEMS TO ADD TO FRIDGE (add-by-search feature)
 SELECT name, type
 FROM PossibleGoods
-WHERE name = 'ca%'
+WHERE name LIKE 'ca%'
 ORDER BY name ASC, type ASC;
- name | type 
-------+------
-(0 rows)
+    name     |   type    
+-------------+-----------
+ cabbage     | vegetable
+ cantaloupe  | fruit
+ carrot      | vegetable
+ catfish     | protein
+ cauliflower | vegetable
+(5 rows)
 
 --VIEW ALL POSSIBLE ITEMS TO ADD TO FRIDGE
 SELECT name, type
@@ -148,117 +153,17 @@ ORDER BY name ASC;
 (105 rows)
 
 --VIEW ALL POSSIBLE TYPES OF FOOD TO ADD TO FRIDGE (add-by-type feature)
-SELECT type
+SELECT DISTINCT type
 FROM PossibleGoods
 ORDER BY type ASC;
    type    
 -----------
  dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- dairy
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
- fruit
  fruit
  grain
- grain
- grain
- grain
- protein
- protein
- protein
- protein
- protein
- protein
- protein
- protein
- protein
- protein
- protein
- protein
- protein
- protein
- protein
- protein
- protein
- protein
- protein
- protein
- protein
- protein
- protein
- protein
- protein
  protein
  vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
- vegetable
-(105 rows)
+(5 rows)
 
 --VIEW ALL POSSIBLE FRUITS TO ADD TO FRIDGE (add-by-type feature)
 SELECT name
