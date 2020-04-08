@@ -17,13 +17,12 @@ WHERE Users.id = 1;
 SELECT name, type
 FROM PossibleGoods
 WHERE name = 'ca%'
-GROUP BY type
-ORDER BY name ASC;
+ORDER BY name ASC, type ASC;
 
 --VIEW ALL POSSIBLE ITEMS TO ADD TO FRIDGE
 SELECT name, type
 FROM PossibleGoods
-ORDER BY name ASC, type ASC;
+ORDER BY name ASC;
 
 --VIEW ALL POSSIBLE TYPES OF FOOD TO ADD TO FRIDGE (add-by-type feature)
 SELECT type
