@@ -16,9 +16,9 @@ FROM Users
 WHERE Users.id = 1;
 
 --VIEW POSSIBLE ITEMS TO ADD TO FRIDGE
-SELECT PossibleGoods.name
+SELECT name
 FROM PossibleGoods
-GROUP BY type;
+ORDER BY name ASC;
 
 --VIEW USER'S FRIDGE
 SELECT name, expiration_date
