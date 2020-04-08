@@ -142,12 +142,14 @@ ORDER BY name ASC;
 --VIEW USER'S FRIDGE
 SELECT name, expiration_date
 FROM Items
-WHERE Items.id = 3
+WHERE Items.id = 11
 ORDER BY expiration_date ASC, name ASC;
-  name  | expiration_date 
---------+-----------------
- banana | 2020-04-14
- bread  | 2020-04-14
- eggs   | 2020-04-28
-(3 rows)
+    name     | expiration_date 
+-------------+-----------------
+ halibut     | 2020-04-09
+ banana      | 2020-04-14
+ bell pepper | 2020-04-17
+ eggplant    | 2020-04-21
+ eggs        | 2020-04-28
+(5 rows)
 
