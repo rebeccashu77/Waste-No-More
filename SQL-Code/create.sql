@@ -33,18 +33,3 @@ CREATE TABLE Items
  FOREIGN KEY (name) REFERENCES PossibleGoods(name),
  CHECK (quantity > 0)
 );
-
-CREATE TABLE Recipe
-(name VARCHAR(256) NOT NULL PRIMARY KEY,
- cuisine VARCHAR(256) NOT NULL,
- ingredients text[],
- dietary_restrictions INTEGER [6],
- CHECK (
- 	(dietary_restrictions[1] = 0 OR dietary_restrictions[1] = 1) AND
-    (dietary_restrictions[2] = 0 OR dietary_restrictions[2] = 1) AND
-    (dietary_restrictions[3] = 0 OR dietary_restrictions[3] = 1) AND
-    (dietary_restrictions[4] = 0 OR dietary_restrictions[4] = 1) AND
-    (dietary_restrictions[5] = 0 OR dietary_restrictions[5] = 1) AND
-    (dietary_restrictions[6] = 0 OR dietary_restrictions[6] = 1)
- )
-);
