@@ -9,6 +9,11 @@ import Fridge from './Fridge/fridge.js';
 import Add from './Add/add.jsx';
 import SignIn from './SignIn/signin.js';
 import ConfirmAdd from './Add/confirm.js';
+import Delete from './Delete/delete.js';
+import Recipes from './Recipes/recipes.js';
+import Recipe from './Recipes/recipe.js';
+import MyAccount from './MyAccount/myaccount.js';
+
 
 import './App.css';
 import fire from './config/fire';
@@ -60,6 +65,8 @@ logout() {
 
             <Link to="/signin" className="home-link">sign in</Link>
 
+            <Link to="/myaccount" className="home-link">my account</Link>
+
             {this.state.user ? (<Link to = "/diet" className = "home-link"  >diet</Link>) : (null)}
 
 						<button type="submit" 
@@ -82,6 +89,10 @@ logout() {
           <Route exact path="/add" component={Add} />
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/confirm" component={ConfirmAdd} />
+          <Route exact path="/delete" component={Delete} />
+          <Route exact path="/recipes" component={Recipes} />
+          <Route exact path="/recipe" component={Recipe} />
+          <Route exact path="/myaccount" component={MyAccount} />
 
 
         {/* Footer */}

@@ -33,7 +33,7 @@ export class Fridge extends Component {
         // console.log(test);
 
         {/* Conditionally renders the fridge display based on if there are items or not */}  
-        if(empty){
+        if(!empty){
             fridge = (
                 <div className="fridge-content"> 
                 <div className="fridge-container">
@@ -45,6 +45,29 @@ export class Fridge extends Component {
                     <h1 class = "main-heading">let's begin!</h1>
                     <Link to="/add">
                         <button class = "add-delete-button">+ add item</button>
+                    </Link> 
+                </div>
+              
+              </div>
+            )
+        }
+        else{
+            fridge = (
+                <div className="fridge-content"> 
+                <div className="fridge-container">
+                    <h2> fridge</h2>
+
+                </div>   
+                
+                <div className="fridge-recipes">
+                    <Link to="/recipes">
+                        <button class = "recipe-button">View Recipes</button>
+                    </Link> 
+                    <Link to="/add">
+                        <button class = "add-delete-button">+ add item</button>
+                    </Link> 
+                    <Link to="/delete">
+                        <button class = "add-delete-button">- delete item</button>
                     </Link> 
                 </div>
               

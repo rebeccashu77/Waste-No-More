@@ -45,16 +45,28 @@
     padding-bottom: 10px;
     padding-left: 15px;
     padding-right: 15px;
+    margin-left: 125px;
 }
 
 .back-button{
-    background-color:rgb(160, 210, 137, 0.43) !important;
+    background-color:rgb(160, 210, 137, 0.43);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    flex-direction: column;
+    max-width: 150px;
+    max-height: 60px;
+    font-size:  30px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 25px;
 }
 
 .button-container{
     padding-bottom: 20px;
     padding-top: 20px;
-    padding-left: 70%;
 }
 
 .next-button:hover{
@@ -62,17 +74,59 @@
 }
 
 .back-button:hover{
-    background-color:rgb(160, 210, 137, 0.43);
+    background-color:#177A00;
 }
 
 .add-delete-button{
     background-color: #FFB76F;
     color: white;
     font-size: 30px;
-    width: 200px;
+    width: 300px;
     border-radius: 20px;
     padding-left: 15px;
     padding-right: 15px;
+    margin-top: 20px;
     border: none;
     font-weight: bold;
+}
+.add-delete-button:hover{
+    background-color: #FFCF7E;
+}
+.recipe-button{
+    background-color: rgb(160, 210, 137, 0.43);
+    color: #177A00;
+    font-size: 30px;
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 0px;
+    border: none;
+    font-weight: bold;
+}
+.recipe-button:hover{
+    background-color: #177A00;
+    color: white;
+}
+
+.show-recipe-button{
+    background-color:#177A00;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    flex-direction: column;
+    max-width: 150px;
+    max-height: 60px;
+    font-size:  30px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 50px;
+    margin-top: 300px;
+}
+.show-recipe-button:hover{
+    background-color: white;
+    color: black;
 }

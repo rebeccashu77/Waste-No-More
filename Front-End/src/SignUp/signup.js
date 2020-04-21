@@ -153,17 +153,18 @@ class SignUp extends Component {
 							/>
 					</div>
 
-          <div class = "button-container" id = "first-page">
-          <button type="submit" 
-						onClick = {this.signup} 
-						value = "next>" 
-						class = "next-button">Sign Up
+          			<div class = "button-container" id = "first-page">
+          				<button type="submit" 
+							onClick = {this.signup} 
+							value = "next>" 
+							class = "next-button">Sign Up
 						</button>
-          </div>
+          			</div>
 				</form>
         </div>
         </div>
 		);
+		
 	}
 }
 
