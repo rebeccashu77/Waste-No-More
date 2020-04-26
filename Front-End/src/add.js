@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+/* import React, { Component } from "react";
 import './add.css';
 
 import { Route, Link } from 'react-router-dom'; 
@@ -25,4 +25,4 @@ export class Add extends Component {
     }
   }
    
-  export default Add;
+  export default Add; */

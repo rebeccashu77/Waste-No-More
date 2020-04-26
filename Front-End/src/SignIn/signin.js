@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import './signin.css';
 import { Route, Link } from 'react-router-dom'; 
 import '../style.css';
-import fire from '../config/fire';
+//import fire from '../config/fbConfig';
+import { connect } from 'react-redux'
+import { signIn } from '../actions/authActions'
+import {Redirect} from 'react-router-dom'
 
 class SignIn extends Component {
 	constructor(props) {
 		super(props);
 
-		this.login = this.login.bind(this);
-		this.handleChange = this.handleChange.bind(this);
+
 
 
 		this.state = {
@@ -31,13 +33,13 @@ class SignIn extends Component {
 		});
 	} */
 
-	login(e) {
+/* 	login =(e) => {
 		e.preventDefault();
 		fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=> {
 		}).catch((error) => {
 			console.log(error);
 		});
-	}
+	} */
 
 /* 	displayLogin(e) {
 		e.preventDefault();
@@ -49,15 +51,20 @@ class SignIn extends Component {
 		});
 	} */
 
-	handleChange(e) {
+	handleChange = (e) => {
 		this.setState({ [e.target.name]: e.target.value});
 	}
+
+	handleSubmit = (e) => {
+		e.preventDefault();
+		this.props.signIn(this.state)
+	 }
 
 	render() {
 		return (
       		<div class = "form-container">
           		<div class = "orange-form">
-					<form>
+					<form onSubmit = {this.handleSubmit}> 
 					<h2 className = "master-heading" id = "sign-up-heading"> sign in</h2>
 
 					<div class = "signup-field">
@@ -84,7 +91,7 @@ class SignIn extends Component {
 
 		  			<div class = "-container" id = "first-page">	
 						<button type="submit" 
-						onClick = {this.login} 
+						//onClick = {this.login} 
 						value = "next>" 
 						class = "next-button">Next
 						</button>
@@ -96,4 +103,17 @@ class SignIn extends Component {
 	}
 }
 
-export default SignIn;
+const mapStateToProps = (state) => {
+    return {
+        authError: state.auth.authError,
+        auth: state.firebase.auth
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        signIn: (creds) => dispatch(signIn(creds))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn)

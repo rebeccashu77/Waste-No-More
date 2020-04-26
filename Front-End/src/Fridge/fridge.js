@@ -1,44 +1,26 @@
-import React, { Component } from "react";
+import FoodList from './foodList';
 import './fridge.css';
 import '../style.css';
-import { Route, Link } from 'react-router-dom'; 
-import { findAllByDisplayValue } from "@testing-library/react";
 
-import firebase from 'firebase';
+import React, { Component } from "react";
+import { Route, Link, Redirect } from 'react-router-dom'; 
+
+import { connect } from 'react-redux';
+import {firestoreConnect} from 'react-redux-firebase'
+import {compose} from 'redux'
+
 import 'firebase/firestore';
 
-export class Fridge extends Component {
-    constructor(props) {
-        super(props);
-    
-        this.state = {
-          empty: true
-        };
-    }
-
-    render() {
-        const empty = this.state.empty;
-        const db = firebase.firestore();
-        let fridgeRef = db.collection('users').doc('jmt62@duke.edu');
-        let fridge = fridgeRef.get()
-            .then(doc => {
-                if (doc.exists) {
-                    console.log(doc.data());
-                }
-            })
-            .catch(err => {
-                console.log('Error getting document', err);
-            });
-        // var test=localStorage.getItem("food");
-        // console.log(test);
-
-        {/* Conditionally renders the fridge display based on if there are items or not */}  
-        if(!empty){
-            fridge = (
+class Fridge extends Component {
+render() {
+        const {foods, auth} = this.props // destructuring
+        if(!auth.uid) return <Redirect to = '/signin' /> 
+        return(
                 <div className="fridge-content"> 
                 <div className="fridge-container">
-                    <h2> fridge</h2>
 
+                <h1> {auth.email}'s fridge</h1>
+                <FoodList foods = {foods} authEmail = {auth.email} />
                 </div>   
                 
                 <div className="fridge-begin">
@@ -47,40 +29,31 @@ export class Fridge extends Component {
                         <button class = "add-delete-button">+ add item</button>
                     </Link> 
                 </div>
-              
               </div>
-            )
-        }
-        else{
-            fridge = (
-                <div className="fridge-content"> 
-                <div className="fridge-container">
-                    <h2> fridge</h2>
-
-                </div>   
-                
-                <div className="fridge-recipes">
-                    <Link to="/recipes">
-                        <button class = "recipe-button">View Recipes</button>
-                    </Link> 
-                    <Link to="/add">
-                        <button class = "add-delete-button">+ add item</button>
-                    </Link> 
-                    <Link to="/delete">
-                        <button class = "add-delete-button">- delete item</button>
-                    </Link> 
-                </div>
-              
-              </div>
-            )
-        }
-
-      return (
-          <div className="Fridge">
-              {fridge}
-          </div>
-      );
-    }
+        )
   }
-   
-  export default Fridge;
+}
+
+  // takes piece of state (in the store) and sends to the component as a prop
+const mapStateToProps = (state) => { // takes in state of the store
+    console.log(state)
+    return { // in the store, the state of the root reducer has project prop that connects to projects property
+        foods: state.firestore.ordered.foods, // pass to props of this new component
+        auth: state.firebase.auth,
+        //users: state.firestore.ordered.users
+    }
+}
+
+
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect(props => [
+        {
+        collection: 'foods'
+        //where: [props.auth.email,'==','foods.uid']
+        } // when this component is active, want to listen to project collection
+    ]), // now whenever database changes, this component will hear that and update state
+)(Fridge)
+// selects t he part of the data from the store that the connected component needs
+// takes in the entire Redux store state
+

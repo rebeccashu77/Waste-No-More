@@ -41,15 +41,16 @@ export class Diet extends Component {
               dairy-free
           </label>
 
-        <div className="back-next-container">
-        <Link to="/signup">
-              <button class = "back-button"> back </button>
+                  <Col xs = {4}>
+          <Link to="/signup">
+              <button class = "back-button next-button"> back </button>
           </Link> 
+          </Col>
+          <Col xs = {4}>
           <Link to="/fridge">
               <button class = "next-button"> next> </button>
           </Link>
-        </div>
-          
+          </Col>
           </div>
         </div>
         </div>

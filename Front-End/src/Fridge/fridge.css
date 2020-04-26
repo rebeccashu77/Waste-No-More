@@ -40,17 +40,17 @@
     text-align: center;
     justify-items: center;
 }
-.fridge-recipes {
-  margin-left: 300px;
-  margin-top: 50px;
-  color:#0075C3;
-  font-size: 30px;
-  width: 400px;
-  text-align: center;
-  justify-items: center;
-  display: flex;
-  flex-direction: column;
-}
+  .fridge-recipes {
+    margin-left: 300px;
+    margin-top: 50px;
+    color:#0075C3;
+    font-size: 30px;
+    width: 400px;
+    text-align: center;
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
+  }
   .fridge-begin button:hover{
     background-color: #FF8000;
   }  
