@@ -9,10 +9,7 @@ import Fridge from './Fridge/fridge.js';
 import Add from './Add/Add.js';
 import SignIn from './SignIn/signin.js';
 import ConfirmAdd from './Add/confirm.js';
-import Delete from './Delete/delete.js';
-import Recipes from './Recipes/recipes.js';
-import Recipe from './Recipes/recipe.js';
-import MyAccount from './MyAccount/myaccount.js';
+import Delete from './Delete/delete.js'
 
 import './App.css';
 import fire from './config/fbConfig';
@@ -91,10 +88,7 @@ logout() {
           <Route exact path="/add" component={Add} />
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/confirm" component={ConfirmAdd} />
-          <Route exact path="/delete" component={Delete} />
-          <Route exact path="/recipes" component={Recipes} />
-          <Route exact path="/recipe" component={Recipe} />
-          <Route exact path="/myaccount" component={MyAccount} />
+          <Route path = '/delete/:id' component = {Delete}/>
 
 
         {/* Footer */}
