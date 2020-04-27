@@ -1,0 +1,62 @@
+app_id: 828de6c9
+app_key: 2050bfcf297c354afff9c1c55f66ee6f
+
+path: https://api.edamam.com/search?
+--> one of q/r must be present in call to API
+
+parameters:
+q: querys text
+--> example (if the user has carrots, potatoes, and onions): q=carrot%20potato%20onion
+r: returns info about a recipe given its ID
+--> example (if a user saves a recipe and wants to look it up): https://api.edamam.com/search?r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_0f792312d3e3623ad993565222fea370c
+app_id: 828de6c9
+app_key: 2050bfcf297c354afff9c1c55f66ee6f
+from: indicates first result index (we will default to 0)
+to: indicates last result index (we will default to 4)
+ingr: maximum number of ingredients (we will default to 10)
+health: used for dietary restrictions
+--> example (if user has peanut allergy): health=peanut-free
+cuisineType: type of cuisine (optional, could use to further specify search)
+mealType: type of meal (optional, could use at certain times of day)
+
+health parameters:
+dairy-free
+gluten-free
+keto-friendly
+kosher
+paleo
+peanut-free
+pork-free
+red-meat-free
+shellfish-free
+tree-nut-free
+vegan
+vegetarian
+
+cuisineType parameters:
+American
+Asian
+Chinese
+Indian
+Italian
+Japanese
+Mediterranean
+Mexican
+South American
+
+mealType parameters:
+Breakfast
+Lunch
+Dinner
+
+url %-coding key:
+colon (:) - %3A
+forward slash (/) - %2F
+pound sign (#) - %23
+space ( ) - %20
+
+example call to api (query; carrots, potatoes, onions; peanut-free):
+https://api.edamam.com/search?q=carrot%20potato%20onion&app_id=828de6c9&app_key=2050bfcf297c354afff9c1c55f66ee6f&from=0&to=3&health=peanut-free
+
+example call to api (return; Japanese Potato Salad With Cucumbers, Carrots, and Red Onion Recipe):
+https://api.edamam.com/search?r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_0f792312d3e3623ad993565222fea370&app_id=828de6c9&app_key=2050bfcf297c354afff9c1c55f66ee6f
