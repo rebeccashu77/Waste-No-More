@@ -7,6 +7,9 @@ import  { add } from '../actions/fridgeAction'
 import confirm from './confirm'
 
 import { Route, Link } from 'react-router-dom'; 
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import * as moment from "moment";
 
 export class Add extends Component {
 
@@ -14,7 +17,8 @@ export class Add extends Component {
         //email: '',
         //password: '',
         food: '',
-        expiration_date: '',
+        //expiration_date: '',
+        expiration_date: new Date(),
         entry: false
     }
 
@@ -24,13 +28,19 @@ export class Add extends Component {
         })
     }
 
+    handleDateChange = (date) => {
+        this.setState({
+          expiration_date: date
+        });
+      };
+
     handleSubmit = (e) => {
        e.preventDefault();
        //console.log(this.state)
        //this.props.add(this.state) 
 
-       if (!this.state.food){
-           alert("Please type an item to add")
+       if (!this.state.food || !this.state.expiration_date){
+           alert("Please type an item to add and select a date")
            this.setState({
                entry: false
            })
@@ -54,14 +64,24 @@ export class Add extends Component {
                  className="input-item"
                  id = "food"
                  value = {this.state.food}
-                 onChange={this.handleChange}/>
+                 onChange={this.handleChange}
+                 />
 
-                <input type="text"
+                {/* <input type="text"
                  placeholder="exp date" 
                  className="input-item"
                  id = "expiration_date"
                  value = {this.state.expiration_date}
-                 onChange={this.handleChange}/>
+                 onChange={this.handleChange}/> */}
+                 <div > Expiration Date:
+                 <DatePicker
+                 className = "datePicker"
+                 id = "expiration_date"
+                 selected={this.state.expiration_date}
+                 onChange={this.handleDateChange}
+                 />
+                 </div>
+
 
                 <div>
                     <Link to="/fridge">

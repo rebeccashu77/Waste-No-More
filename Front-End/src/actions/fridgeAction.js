@@ -13,7 +13,7 @@ export const add = (food) => {
         firestore.collection('foods').add({ //add to projects collection
             ...food,
             authorId: authorId,
-            id: profile.UID,
+            userId: profile.UID,
             purchase_date: new Date()
             //: fridge.food
         }).then( () =>{
@@ -27,4 +27,11 @@ export const add = (food) => {
      }
 };
 
+
+export const deleteFood = (id) => {
+    return (dispatch, getState, { getFirestore }) => {
+    const firestore = getFirestore()
+    firestore.collection('foods').doc(id).delete();
+    }
+  }
 //npm install react-redux-firebase redux-firestore

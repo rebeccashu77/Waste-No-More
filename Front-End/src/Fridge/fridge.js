@@ -1,6 +1,7 @@
 import FoodList from './foodList';
 import './fridge.css';
 import '../style.css';
+import '../Delete/delete';
 
 import React, { Component } from "react";
 import { Route, Link, Redirect } from 'react-router-dom'; 
@@ -27,7 +28,9 @@ render() {
                     <h1 class = "main-heading">let's begin!</h1>
                     <Link to="/add">
                         <button class = "add-delete-button">+ add item</button>
-                    </Link> 
+                    </Link>
+                    
+
                 </div>
               </div>
         )
@@ -49,7 +52,8 @@ export default compose(
     connect(mapStateToProps),
     firestoreConnect(props => [
         {
-        collection: 'foods'
+        collection: 'foods',
+        orderBy: ["expiration_date", "asc"]
         //where: [props.auth.email,'==','foods.uid']
         } // when this component is active, want to listen to project collection
     ]), // now whenever database changes, this component will hear that and update state

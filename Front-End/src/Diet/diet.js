@@ -48,7 +48,7 @@ export class Diet extends Component {
           </Col>
           <Col xs = {4}>
           <Link to="/fridge">
-              <button class = "next-button"> next> </button>
+              <button class = "next-button"> next </button>
           </Link>
           </Col>
           </div>

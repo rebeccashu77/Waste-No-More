@@ -18,6 +18,12 @@ const fridgeReducer = (state = initState, action) => {
         case 'ADD_FOOD_ERROR':
             console.log('add food error', action.err)
             return state;
+        case 'DELETE_PROJECT':
+            console.log('delete food');
+            return state;
+        case 'DELETE_PROJECT_ERROR':
+            console.log('delete project error', 'state: ', state, 'action: ', action.project);
+            return state;
         default:
             return state;
     }

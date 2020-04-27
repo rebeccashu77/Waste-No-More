@@ -61,7 +61,9 @@ class SignIn extends Component {
 	 }
 
 	render() {
+		const {authError, auth} = this.props
 		return (
+			
       		<div class = "form-container">
           		<div class = "orange-form">
 					<form onSubmit = {this.handleSubmit}> 
@@ -96,6 +98,9 @@ class SignIn extends Component {
 						class = "next-button">Next
 						</button>
         			</div>
+					<div className = "red-text center">
+                            {authError ? <p> {authError} </p> : null}
+                        </div>
 					</form>
       	 		</div>
        	 	</div>
